@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import myContext from '../../context/context/Mycontext'
+import myContext from '../../context/Mycontext'
 
 function Filter() {
     const context = useContext(myContext)

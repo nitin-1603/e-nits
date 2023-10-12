@@ -1,17 +1,17 @@
-import {Fragment, useContext, useState} from 'react'
-      import {Dialog, Transition} from '@headlessui/react'
-      import {Link} from 'react-router-dom'
-      import {BsFillCloudSunFill} from 'react-icons/bs'
-      import {FiSun} from 'react-icons/fi'
-      import myContext from '../../context/context/Mycontext'
-      import {RxCross2} from 'react-icons/rx'
+import { Fragment, useContext, useState } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
+import { Link } from 'react-router-dom'
+import { BsFillCloudSunFill } from 'react-icons/bs'
+import { FiSun } from 'react-icons/fi'
+import myContext from '../../context/Mycontext'
+import { RxCross2 } from 'react-icons/rx'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
   const context = useContext(myContext)
-  const {toggleMode, mode} = context
+  const { toggleMode, mode } = context
   return (
-    <>     
+    <>
       <div className="bg-white sticky top-0 z-50  "  >
         {/* Mobile menu */}
         <Transition.Root show={open} as={Fragment}>
@@ -99,8 +99,8 @@ const Navbar = () => {
 
         {/* desktop  */}
         <header className="relative bg-white">
-          <p className="flex h-10 items-center justify-center bg-pink-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8" style={{ backgroundColor: mode === 'dark' ? 'rgb(62 64 66)' : '', color: mode === 'dark' ? 'white' : '', }}>
-            Get free delivery on orders over ₹300
+          <p className="flex h-10 items-center justify-center bg-orange-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8" style={{ backgroundColor: mode === 'dark' ? 'rgb(62 64 66)' : '', color: mode === 'dark' ? 'white' : '', }}>
+            <marquee direction="left">Get free delivery on orders over ₹300</marquee>
           </p>
 
           <nav aria-label="Top" className="bg-gray-100 px-4 sm:px-6 lg:px-8 shadow-xl " style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
@@ -193,7 +193,7 @@ const Navbar = () => {
           </nav>
         </header>
       </div>
-      
+
     </>
   )
 }

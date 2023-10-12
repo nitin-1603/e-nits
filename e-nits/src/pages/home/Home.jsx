@@ -1,7 +1,9 @@
 import Layout from '../../components/layout/Layout'
-import Category from '../../components/category/Category'
+
 import HeroSection from '../../components/heroSection/HeroSection'
 import Filter from '../../components/filter/Filter'
+import ProductCard from '../../productCard/productCard'
+import Track from '../../components/track/Track'
 
 
 const Home = () => {
@@ -11,6 +13,8 @@ const Home = () => {
         <HeroSection/>
         <Filter/>
       </Layout>
+      <ProductCard/>
+      <Track/>
     </>
   )
 }

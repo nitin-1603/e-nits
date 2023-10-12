@@ -3,7 +3,7 @@ import Order from "./pages/order/Order"
 import Card from "./pages/card/Card"
 import Dashboard from "./pages/admin/Dashboard"
 import Nopage from "./pages/nopage/Nopage"
-import MyState from "./context/context/MyState"
+import MyState from "./context/MyState"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
