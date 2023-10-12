@@ -4,7 +4,7 @@ import Layout from "../../components/layout/Layout"
 const Order = () => {
   return (
     <div>
-      <Layout>Order</Layout>
+      <Layout></Layout>
       
     </div>
   )

@@ -159,7 +159,7 @@ const Navbar = () => {
                     <a href="#" className="flex items-center text-gray-700 ">
                       <img
                         className="inline-block w-10 h-10 rounded-full"
-                        src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
+                        src="https://static01.nyt.com/images/2023/10/12/business/11techfix-print/00techfix-jumbo.jpg?quality=75&auto=webp"
                         alt="Dan_Abromov" />
                     </a>
                   </div>
