@@ -1,10 +1,14 @@
 import Home from "./pages/home/Home"
 import Order from "./pages/order/Order"
-import Card from "./pages/card/Card"
+import Cart from "./pages/card/Cart"
 import Dashboard from "./pages/admin/Dashboard"
 import Nopage from "./pages/nopage/Nopage"
 import MyState from "./context/MyState"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/registration/Login"
+import Signup from "./pages/registration/Signup"
+import ProductInfo from "./pages/productInfo/ProductInfo"
+
 
 const App = () => {
   return (
@@ -12,11 +16,15 @@ const App = () => {
       <MyState>
         <Router>
           <Routes>
-            <Route path='/' element={<Home />}></Route>
-            <Route path='/order' element={<Order />}></Route>
-            <Route path='/card' element={<Card />}></Route>
-            <Route path='/dashboad' element={<Dashboard />}></Route>
-            <Route path='/*' element={<Nopage />}></Route>
+            <Route path='/' element={<Home />} />
+            <Route path='/order' element={<Order />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/dashboad' element={<Dashboard />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/productInfo/:id' element={<ProductInfo />} />
+            <Route path='/admin' element={<Dashboard />} />
+            <Route path='/*' element={<Nopage />} />
           </Routes>
         </Router >
       </MyState>
