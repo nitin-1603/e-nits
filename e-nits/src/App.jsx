@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/registration/Login"
 import Signup from "./pages/registration/Signup"
 import ProductInfo from "./pages/productInfo/ProductInfo"
+import AddProduct from "./pages/admin/page/Addproduct"
+import UpdateProduct from "./pages/admin/page/Updateproduct"
 
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
             <Route path='/signup' element={<Signup />} />
             <Route path='/productInfo/:id' element={<ProductInfo />} />
             <Route path='/admin' element={<Dashboard />} />
+            <Route path= '/addproduct' element={<AddProduct/>} />
+            <Route path= '/updateproduct' element ={<UpdateProduct/>}/>
             <Route path='/*' element={<Nopage />} />
           </Routes>
         </Router >
