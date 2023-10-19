@@ -4,6 +4,9 @@ import { useState } from 'react'
 const MyState = (prop) => {
   const [mode, setMode] = useState('light');
 
+  // for showing alert i am creating a useState
+const [loading, setLoading] = useState(false);
+
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
@@ -17,7 +20,7 @@ const MyState = (prop) => {
   }
   return (
     <>
-      <MyContext.Provider value={{ toggleMode, mode }}>
+      <MyContext.Provider value={{ toggleMode, mode, loading, setLoading}}>
         {prop.children}
       </MyContext.Provider>
     </>
