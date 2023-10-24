@@ -51,9 +51,9 @@ function Dashboard() {
           </div>
         </div>
 
+      </section>
         {/* dashboard tabs */}
         <DashboardTab/>
-      </section>
     </Layout>
   )
 }

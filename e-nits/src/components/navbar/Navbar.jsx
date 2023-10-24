@@ -51,7 +51,7 @@ const Navbar = () => {
                   </div>
                   <div className="space-y-6 border-t border-gray-200 px-4 py-6">
 
-                    <Link to={'/allproducts'} className="text-sm font-medium text-gray-900 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    <Link to={'/allproduct'} className="text-sm font-medium text-gray-900 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       All Products
                     </Link>
                     <div className="flow-root">
@@ -61,7 +61,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="flow-root">
-                      <Link to={'/dashboard'} className="-m-2 block p-2 font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                      <Link to={'/admin'} className="-m-2 block p-2 font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}>
                         admin
                       </Link>
                     </div>
@@ -75,8 +75,8 @@ const Navbar = () => {
                       <Link to={'/'} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer">
                         <img
                           className="inline-block w-10 h-10 rounded-full"
-                          src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
-                          alt="Dan_Abromov" />                                        </Link>
+                          src="https://static01.nyt.com/images/2023/10/12/business/11techfix-print/00techfix-jumbo.jpg?quality=75&auto=webp"
+                          alt="Nits" />                                        </Link>
                     </div>
                   </div>
 
@@ -114,7 +114,7 @@ const Navbar = () => {
                   <span className="sr-only">Open menu</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                  </svg>
+                  </svg>    
 
                 </button>
 
@@ -160,7 +160,7 @@ const Navbar = () => {
                       <img
                         className="inline-block w-10 h-10 rounded-full"
                         src="https://static01.nyt.com/images/2023/10/12/business/11techfix-print/00techfix-jumbo.jpg?quality=75&auto=webp"
-                        alt="Dan_Abromov" />
+                        alt="Nits" />
                     </a>
                   </div>
 

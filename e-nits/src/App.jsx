@@ -12,6 +12,7 @@ import AddProduct from "./pages/admin/page/Addproduct"
 import UpdateProduct from "./pages/admin/page/Updateproduct"
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import Allproduct from "./pages/allproduct/Allproduct"
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path='/order' element={<Order />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/dashboad' element={<Dashboard />} />
+            <Route path='/allproduct' element={<Allproduct />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/productInfo/:id' element={<ProductInfo />} />

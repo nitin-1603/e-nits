@@ -22,14 +22,15 @@ function Login() {
 
     // function for show and hide password
     const showPwrd = () => {
-        if (type === "password") {
-            setType('text');
-            setHidepassword('Hide Password');
+        // if (type === "password") {
+        //     setType('text');
+        //     setHidepassword('Hide Password');
 
-        } else {
-            setType("password");
-            setHidepassword('Show Password');
-        }
+        // } else {
+        //     setType("password");
+        //     setHidepassword('Show Password');
+        // }
+        type==="password"? (setType('text'), setHidepassword('Hide Password')) :(setType("password"), setHidepassword('Show Password'))
     }
 
     const login = async () => {
