@@ -67,16 +67,18 @@ const Navbar = () => {
                     </div>
 
                     <div className="flow-root">
-                      <a className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    <a href='www.google.com' className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
                         Logout
                       </a>
+                      
                     </div>
                     <div className="flow-root">
                       <Link to={'/'} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer">
                         <img
                           className="inline-block w-10 h-10 rounded-full"
                           src="https://static01.nyt.com/images/2023/10/12/business/11techfix-print/00techfix-jumbo.jpg?quality=75&auto=webp"
-                          alt="Nits" />                                        </Link>
+                          alt="Nits" />
+                      </Link>
                     </div>
                   </div>
 
@@ -130,17 +132,17 @@ const Navbar = () => {
                 <div className="ml-auto flex items-center">
                   <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
 
-                    <Link to={'/allproducts'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    <Link to={'/allproduct'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       All Products
                     </Link>
                     <Link to={'/order'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Order
                     </Link>
-                    <Link to={'/dashboard'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    <Link to={'/admin'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Admin
                     </Link>
 
-                    <a className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    <a href='https://www.google.com' rel="noreferrer" target="_blank" className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Logout
                     </a>
                   </div>

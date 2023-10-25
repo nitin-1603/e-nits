@@ -4,17 +4,18 @@ import Cart from "./pages/card/Cart"
 import Dashboard from "./pages/admin/Dashboard"
 import Nopage from "./pages/nopage/Nopage"
 import MyState from "./context/MyState"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import Login from "./pages/registration/Login"
 import Signup from "./pages/registration/Signup"
 import ProductInfo from "./pages/productInfo/ProductInfo"
 import AddProduct from "./pages/admin/page/Addproduct"
 import UpdateProduct from "./pages/admin/page/Updateproduct"
-import {ToastContainer} from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Allproduct from "./pages/allproduct/Allproduct"
 
 const App = () => {
+  
   return (
     <>
       <MyState>
@@ -23,17 +24,16 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/order' element={<Order />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/dashboad' element={<Dashboard />} />
+            <Route path='/admin' element={<Dashboard />} />
             <Route path='/allproduct' element={<Allproduct />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/productInfo/:id' element={<ProductInfo />} />
-            <Route path='/admin' element={<Dashboard />} />
-            <Route path= '/addproduct' element={<AddProduct/>} />
-            <Route path= '/updateproduct' element ={<UpdateProduct/>}/>
+            <Route path='/addproduct' element={<AddProduct />} />
+            <Route path='/updateproduct' element={<UpdateProduct />} />
             <Route path='/*' element={<Nopage />} />
           </Routes>
-        <ToastContainer/>
+          <ToastContainer />
         </Router >
       </MyState>
     </>
@@ -41,3 +41,14 @@ const App = () => {
 }
 
 export default App
+
+
+export const ProtectedRouteForOrder = ({ children }) => {
+  const user = localStorage.getItem('user');
+
+  if (user) {
+    return children
+  } else {
+    return <Navigate to={"/login"}/> 
+  }
+}
