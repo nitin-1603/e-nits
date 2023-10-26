@@ -38,7 +38,7 @@ const App = () => {
             </ProtectedRouteForAdmin>} />
             <Route path='/updateproduct' element={<ProtectedRouteForAdmin>
               <UpdateProduct />
-              </ProtectedRouteForAdmin>} />
+            </ProtectedRouteForAdmin>} />
             <Route path='/*' element={<Nopage />} />
           </Routes>
           <ToastContainer />
@@ -62,9 +62,9 @@ export const ProtectedRouteForOrder = ({ children }) => {
 }
 
 // protected route for Admin
-const ProtectedRouteForAdmin = ({ children }) => {
-  const users = JSON.parse(localStorage.getItem("user"))
-  if (users.user.email === 'ch.nitin48@gmail.com') {
+const ProtectedRouteForAdmin = ({children}) => {
+  const admin = JSON.parse(localStorage.getItem("user"))
+  if (admin.user.email === 'ch.nitin48@gmail.com') {
     return children
   } else {
     return <Navigate to={"/login"} />

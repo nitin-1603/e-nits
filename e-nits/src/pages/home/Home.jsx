@@ -5,16 +5,17 @@ import Filter from '../../components/filter/Filter'
 import ProductCard from '../../productCard/productCard'
 import Track from '../../components/track/Track'
 import Testimonial from '../../components/testimonial/Testmonial'
-import {useSelector } from 'react-redux'
+// import {useSelector } from 'react-redux'
 // import { useDispatch } from 'react-redux'
 // import { addToCart, deleteFromCart } from '../../redux/cartSlice'
 
 
 const Home = () => {
-  // const dispatch = useDispatch();
-  const cartItem = useSelector((item) => item.cart)
+  // {...useDispatch works with redux toolkit...}
 
-  console.log(cartItem)
+  // const dispatch = useDispatch();
+  // const cartItem = useSelector((item) => item.cart)
+
 
   // const addItem = () => {
   //   dispatch(addToCart('shoes'))

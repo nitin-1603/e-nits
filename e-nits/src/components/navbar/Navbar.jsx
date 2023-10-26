@@ -10,6 +10,23 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const context = useContext(myContext)
   const { toggleMode, mode } = context
+
+  // condition for admin show only when admin login with admin email id
+  // JSON.parse gets the data in object form and JSON.stringify gets the data in string form
+  const user = JSON.parse(localStorage.getItem('user'))
+  // console.log(user.user.email)
+
+  // function for to delete localstorage data for logout
+  const logOut = () => {
+    localStorage.clear('user')
+    window.location.href = '/'
+  }
+
+  // function for login 
+  const logIn = ()=>{
+    window.location.href = '/login'
+  }
+
   return (
     <>
       <div className="bg-white sticky top-0 z-50  "  >
@@ -54,23 +71,31 @@ const Navbar = () => {
                     <Link to={'/allproduct'} className="text-sm font-medium text-gray-900 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       All Products
                     </Link>
-                    <div className="flow-root">
+                    {/* here we are apply the condition for order component (in moblie viewport) */}
+                    {user?.user?.email ? <div className="flow-root">
                       <Link to={'/order'} style={{ color: mode === 'dark' ? 'white' : '', }} className="-m-2 block p-2 font-medium text-gray-900">
                         Order
                       </Link>
-                    </div>
+                    </div> : ''}
 
-                    <div className="flow-root">
-                      <Link to={'/admin'} className="-m-2 block p-2 font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}>
-                        admin
+
+                    {/* condition for admin component  */}
+
+                    {user?.user?.email === 'ch.nitin48@gmail.com' ? <div className="flow-root">
+                      <Link to={'/admin'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                        Admin
                       </Link>
-                    </div>
+                    </div> : ''}
 
                     <div className="flow-root">
-                    <a href='www.google.com' className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                      {user ? <a onClick={logOut} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
                         Logout
-                      </a>
-                      
+                      </a> : <a onClick={logIn} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                        Login
+                      </a>}
+
+
+
                     </div>
                     <div className="flow-root">
                       <Link to={'/'} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer">
@@ -116,7 +141,7 @@ const Navbar = () => {
                   <span className="sr-only">Open menu</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                  </svg>    
+                  </svg>
 
                 </button>
 
@@ -135,12 +160,20 @@ const Navbar = () => {
                     <Link to={'/allproduct'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       All Products
                     </Link>
-                    <Link to={'/order'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
-                      Order
-                    </Link>
-                    <Link to={'/admin'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+
+                    {/* here we are apply the condition for order component (in moblie viewport) */}
+                    {user?.user?.email ? <div className="flow-root">
+                      <Link to={'/order'} style={{ color: mode === 'dark' ? 'white' : '', }} className="-m-2 block p-2 font-medium text-gray-900">
+                        Order
+                      </Link>
+                    </div> : ''}
+
+
+                    {/* condition for admin component  */}
+                    {user?.user?.email === 'ch.nitin48@gmail.com' ? <Link to={'/admin'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Admin
-                    </Link>
+                    </Link> : ''}
+
 
                     <a href='https://www.google.com' rel="noreferrer" target="_blank" className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Logout

@@ -33,19 +33,27 @@ function Signup() {
             }
             const userRef = collection(fireDB, "userS")
             await addDoc(userRef, user);
+
             setName("");
             setEmail("");
             setPassword("");
             setLoading(false)
             toast.success("Signup Succesfully")
-            
+
         } catch (error) {
             console.log(error)
             setLoading(false)
+            toast.error("Email Already Registered")
+
+            setTimeout(() => {
+                window.location.href = '/login'                
+            }, 2500);
         }
     }
 
     return (
+        <>
+        
         <div className=' flex justify-center items-center h-screen'>
             {loading && <Loader />}
             <div className=' bg-gray-800 px-10 py-10 rounded-xl '>
@@ -92,6 +100,7 @@ function Signup() {
                 </div>
             </div>
         </div>
+    </>
     )
 }
 
