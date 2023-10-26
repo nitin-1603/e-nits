@@ -4,7 +4,7 @@ import Cart from "./pages/card/Cart"
 import Dashboard from "./pages/admin/Dashboard"
 import Nopage from "./pages/nopage/Nopage"
 import MyState from "./context/MyState"
-import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/registration/Login"
 import Signup from "./pages/registration/Signup"
 import ProductInfo from "./pages/productInfo/ProductInfo"
@@ -15,22 +15,30 @@ import 'react-toastify/dist/ReactToastify.css';
 import Allproduct from "./pages/allproduct/Allproduct"
 
 const App = () => {
-  
+
   return (
     <>
       <MyState>
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/order' element={<Order />} />
+            <Route path='/order' element={<ProtectedRouteForOrder>
+              <Order />
+            </ProtectedRouteForOrder>} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/admin' element={<Dashboard />} />
+            <Route path='/admin' element={<ProtectedRouteForAdmin>
+              <Dashboard />
+            </ProtectedRouteForAdmin>} />
             <Route path='/allproduct' element={<Allproduct />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/productInfo/:id' element={<ProductInfo />} />
-            <Route path='/addproduct' element={<AddProduct />} />
-            <Route path='/updateproduct' element={<UpdateProduct />} />
+            <Route path='/addproduct' element={<ProtectedRouteForAdmin>
+              <AddProduct />
+            </ProtectedRouteForAdmin>} />
+            <Route path='/updateproduct' element={<ProtectedRouteForAdmin>
+              <UpdateProduct />
+              </ProtectedRouteForAdmin>} />
             <Route path='/*' element={<Nopage />} />
           </Routes>
           <ToastContainer />
@@ -42,13 +50,23 @@ const App = () => {
 
 export default App
 
-
+// protected router for order
 export const ProtectedRouteForOrder = ({ children }) => {
   const user = localStorage.getItem('user');
 
   if (user) {
     return children
   } else {
-    return <Navigate to={"/login"}/> 
+    return <Navigate to={"/login"} />
+  }
+}
+
+// protected route for Admin
+const ProtectedRouteForAdmin = ({ children }) => {
+  const users = JSON.parse(localStorage.getItem("user"))
+  if (users.user.email === 'ch.nitin48@gmail.com') {
+    return children
+  } else {
+    return <Navigate to={"/login"} />
   }
 }
